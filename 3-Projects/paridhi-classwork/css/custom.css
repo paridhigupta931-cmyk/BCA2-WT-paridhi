@@ -1,8 +1,57 @@
 /* CSS Variables */
 :root{
     --clr-shadow:grey
+    --font-body:'open Sans',sans-serif;
+    --clr-text:black
+    --clr-bg: #ffffff
+    --font-heading: 'Poopins',sans-serif;
+    --clr-accent:#ffc
 }
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top:70px;
+}
+body{
+    font-family: var(--font-body);
+    color: var(--clr-text);
+    background-color: var(--clr-bg);
+    transition: background-color 0.3s ease,color 0.3s ease;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(font-heading);
+}
+section{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.navbar{
+    transition: background-color 0.3rem ;
+}
+.navbar-brand{
+    font-family: var(--font-heading);
+    font-size: 1.3rem; ;
+}
+.navbar .nav-link{
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+.navbar .nav-link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--clr-accent);
+    transition: transform 0.5s ease,left 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link:active::after{
+    width: 100%;
+    left: 0%;
+}
 /*Info cards styling*/
 .info-card{
     border-radius: 0.5rem;
